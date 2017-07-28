@@ -41,17 +41,3 @@ for c in cursos:
         print (child)
     '''
 
-
-
-'''
-links = 
-
-for link in links:
-    materia = Materia()
-    request_para_pagina_curso = requests.get(link['href'])
-
-    
-    materia.descricao = soup_curso.select_one('.puc-wp-curso-outras-unidades').text
-    materia.area_de_conhecimento = soup_curso.select_one('.puc-pl-pos-graduacao-conteudo').text
-    materia.duracao = soup_curso.select_one('#ctl00_PlaceHolderMain_ctl11__ControlWrapper_RichHtmlField').text
-'''
