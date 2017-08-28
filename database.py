@@ -39,7 +39,7 @@ class Unidade(Base):
 	unidade = Column(String(80), unique=True)
 
 
-Base.metadata.create_all(engine)
+#Base.metadata.create_all(engine)
 
 
 

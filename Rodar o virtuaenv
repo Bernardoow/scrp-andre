@@ -1,0 +1,18 @@
+Rodar o virtuaenv
+
+>source Env3/bin/activate (python 3)
+>source Env2/bin/activate (python 2)
+
+Sair do virtualenv
+
+>deactivate
+
+
+Verificar os pacotes instalados
+
+>pip freeze
+
+
+Para instalar um conjunto de requiriments de um projeto
+
+> pip install -r requirements.txt
