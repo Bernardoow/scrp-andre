@@ -1,0 +1,5 @@
+(.*)\s*(?=Área) #desc
+
+:(.*)\s*(?=Importante) # cnpq
+
+Importante:(.*)\s*(?=Objetivos) # importante
