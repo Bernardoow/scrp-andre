@@ -12,7 +12,7 @@ from database import Unidade, Curso, AreaConhecimento, Objetivo, Programa
 from database import Base, engine, session
 
 def init_browser():
-	driver = "/Users/dedeco/Apps/chromedriver"
+	driver = "/usr/local/bin/chromedriver"
 	os.environ["webdriver.chrome.driver"] = driver
 	b = webdriver.Chrome(driver)	
 	return b
@@ -67,7 +67,11 @@ def captura(url):
 				texto += "\r" + tag.text
 
 		m = re.search('(.*)\\s*(?=Área)', texto)
-		descricao = m.group(0)
+		try:
+			descricao = m.group(0)
+		except AttributeError:
+			descricao = None
+			pass
 
 		c = Curso()
 		c.nome_curso = curso
@@ -82,8 +86,11 @@ def captura(url):
 		ultags = div.find_all("ul")
 
 		obj = []
-		for litag in ultags[0].find_all('li'):
-			obj.append(litag.text)
+		try:
+			for litag in ultags[0].find_all('li'):
+				obj.append(litag.text)
+		except IndexError:
+			pass
 
 		for i in obj:
 			o = Objetivo()
